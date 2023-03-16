@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.indra.cloud</groupId>
+        <artifactId>indra</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <description>indra 内网接口</description>
+    <modules>
+        <module>indra-api-auth</module>
+        <module>indra-api-leaf</module>
+        <module>indra-api-multishop</module>
+        <module>indra-api-order</module>
+        <module>indra-api-platform</module>
+        <module>indra-api-product</module>
+        <module>indra-api-rbac</module>
+        <module>indra-api-user</module>
+    </modules>
+    <artifactId>indra-api</artifactId>
+    <packaging>pom</packaging>
+
+    <name>indra-api</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="indra-api-rbac" />
+        <module name="Indra-auth" />
+        <module name="indra-api-auth" />
+        <module name="indra-common-cache" />
+        <module name="indra-api-multishop" />
+        <module name="indra-common-order" />
+        <module name="indra-common-rabbitmq" />
+        <module name="indra-api-leaf" />
+        <module name="indra-common-core" />
+        <module name="indra-api-product" />
+        <module name="indra-common-security" />
+        <module name="indra-api-platform" />
+        <module name="indra-api-user" />
+        <module name="indra-common-database" />
+        <module name="indra-order" />
+        <module name="indra-api-order" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>

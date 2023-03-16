@@ -1,0 +1,11 @@
+server:
+  port: 9201
+spring:
+  application:
+    name: indra-order
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.147.138:8848
+      discovery:
+        server-addr: 192.168.147.138:8848

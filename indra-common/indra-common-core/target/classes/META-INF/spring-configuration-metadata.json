@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "feign.inside",
+      "type": "com.indra.cloud.common.feign.FeignInsideAuthConfig",
+      "sourceType": "com.indra.cloud.common.feign.FeignInsideAuthConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "feign.inside.ips",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.indra.cloud.common.feign.FeignInsideAuthConfig"
+    },
+    {
+      "name": "feign.inside.key",
+      "type": "java.lang.String",
+      "description": "应该用配置中心里的，怎么搞？",
+      "sourceType": "com.indra.cloud.common.feign.FeignInsideAuthConfig"
+    },
+    {
+      "name": "feign.inside.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.indra.cloud.common.feign.FeignInsideAuthConfig"
+    }
+  ],
+  "hints": []
+}
