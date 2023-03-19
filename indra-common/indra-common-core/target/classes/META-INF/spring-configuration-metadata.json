@@ -15,7 +15,6 @@
     {
       "name": "feign.inside.key",
       "type": "java.lang.String",
-      "description": "应该用配置中心里的，怎么搞？",
       "sourceType": "com.indra.cloud.common.feign.FeignInsideAuthConfig"
     },
     {

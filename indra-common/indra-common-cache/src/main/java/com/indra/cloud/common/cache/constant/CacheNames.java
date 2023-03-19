@@ -1,4 +1,4 @@
-package com.mall4j.cloud.common.cache.constant;
+package com.indra.cloud.common.cache.constant;
 
 /**
  * 缓存名字
@@ -6,7 +6,7 @@ package com.mall4j.cloud.common.cache.constant;
  * @author FrozenWatermelon
  * @date 2020/7/9
  */
-public interface CacheNames {
+public interface CacheNames extends RbacCacheNames,OauthCacheNames,ProductCacheNames,MultishopCacheNames,PlatformCacheNames,BizCacheNames, UserCacheNames {
     /**
      *
      * 参考CacheKeyPrefix

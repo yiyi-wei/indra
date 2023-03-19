@@ -2,10 +2,10 @@ package com.indra.cloud.common.cache.util;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
+import com.indra.cloud.common.cache.constant.CacheNames;
 import com.indra.cloud.common.exception.IndraCloudException;
 import com.indra.cloud.common.response.ResponseEnum;
 import com.indra.cloud.common.utils.SpringContextUtils;
-import com.mall4j.cloud.common.cache.constant.CacheNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;

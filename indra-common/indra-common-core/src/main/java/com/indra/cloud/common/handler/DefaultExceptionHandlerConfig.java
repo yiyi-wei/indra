@@ -1,12 +1,8 @@
 package com.indra.cloud.common.handler;
 
-import cn.hutool.core.util.StrUtil;
 import com.indra.cloud.common.exception.IndraCloudException;
 import com.indra.cloud.common.response.ResponseEnum;
 import com.indra.cloud.common.response.ServerResponseEntity;
-import io.seata.core.context.RootContext;
-import io.seata.core.exception.TransactionException;
-import io.seata.tm.api.GlobalTransactionContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -74,13 +70,13 @@ public class DefaultExceptionHandlerConfig {
         return ResponseEntity.status(HttpStatus.OK).body(ServerResponseEntity.showFailMsg(e.getMessage()));
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ServerResponseEntity<Object>> exceptionHandler(Exception e) throws TransactionException {
-        log.error("exceptionHandler", e);
-        log.info("RootContext.getXID(): " + RootContext.getXID());
-        if (StrUtil.isNotBlank(RootContext.getXID())) {
-            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(ServerResponseEntity.fail(ResponseEnum.EXCEPTION));
-    }
+    // @ExceptionHandler(Exception.class)
+    // public ResponseEntity<ServerResponseEntity<Object>> exceptionHandler(Exception e) throws TransactionException {
+    //     log.error("exceptionHandler", e);
+    //     log.info("RootContext.getXID(): " + RootContext.getXID());
+    //     if (StrUtil.isNotBlank(RootContext.getXID())) {
+    //         GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+    //     }
+    //     return ResponseEntity.status(HttpStatus.OK).body(ServerResponseEntity.fail(ResponseEnum.EXCEPTION));
+    // }
 }

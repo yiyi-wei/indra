@@ -10,6 +10,8 @@
         <module name="indra-api-rbac" />
         <module name="Indra-auth" />
         <module name="indra-api-auth" />
+        <module name="indra-leaf" />
+        <module name="indra-rbac" />
         <module name="indra-common-cache" />
         <module name="indra-api-multishop" />
         <module name="indra-common-order" />
