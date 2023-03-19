@@ -1,5 +1,5 @@
 server:
-  port: 9101
+  port: 9102
 spring:
   application:
     name: indra-rbac
@@ -18,3 +18,7 @@ spring:
     # indra-auth-test.yml 测试环境数据库配置信息
     # indra-auth-prod.yml 生产环境数据库配置信息
 
+mybatis:
+  mapper-locations: classpath:com/indra/cloud/rbac/mapper/xml/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

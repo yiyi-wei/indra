@@ -2,6 +2,7 @@ package com.indra.cloud.rbac.mapper;
 
 import com.indra.cloud.rbac.model.Role;
 import com.indra.cloud.rbac.vo.RoleVO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @author FrozenWatermelon
  * @date 2020-09-17 19:15:44
  */
+@Mapper
 public interface RoleMapper {
 
 	/**

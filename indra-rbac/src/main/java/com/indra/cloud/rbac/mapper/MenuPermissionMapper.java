@@ -3,6 +3,7 @@ package com.indra.cloud.rbac.mapper;
 import com.indra.cloud.api.rbac.bo.UriPermissionBO;
 import com.indra.cloud.rbac.model.MenuPermission;
 import com.indra.cloud.rbac.vo.MenuPermissionVO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @author FrozenWatermelon
  * @date 2020/09/03
  */
+@Mapper
 public interface MenuPermissionMapper {
 
 	/**

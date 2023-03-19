@@ -1,0 +1,18 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: indra-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.147.138:8848
+        file-extension: yml #配置文件格式
+        shared-configs:
+          - application-dev.yml
+      discovery:
+        server-addr: 192.168.147.138:8848
+  profiles:
+    active: dev
+
+

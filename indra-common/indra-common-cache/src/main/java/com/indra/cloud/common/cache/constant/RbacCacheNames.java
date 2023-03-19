@@ -10,7 +10,7 @@ public interface RbacCacheNames {
     /**
      * 前缀
      */
-    String RBAC_PREFIX = "mall4cloud_rbac:";
+    String RBAC_PREFIX = "indra_rbac:";
 
     /**
      * 所有权限列表缓存key

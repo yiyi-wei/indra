@@ -30,9 +30,7 @@ public interface PermissionFeignClient {
 	 * @return 是否有某个uri的权限
 	 */
 	@GetMapping(value = Auth.CHECK_RBAC_URI)
-	ServerResponseEntity<Boolean> checkPermission(@RequestParam("userId") Long userId, @RequestParam("sysType") Integer sysType,
-												  @RequestParam("uri") String uri, @RequestParam("isAdmin") Integer isAdmin,
-												  @RequestParam("method") Integer method);
+	ServerResponseEntity<Boolean> checkPermission(@RequestParam("userId") Long userId, @RequestParam("sysType") Integer sysType, @RequestParam("uri") String uri, @RequestParam("isAdmin") Integer isAdmin, @RequestParam("method") Integer method);
 
 	/**
 	 * 清除用户权限缓存

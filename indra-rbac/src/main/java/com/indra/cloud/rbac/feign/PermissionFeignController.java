@@ -7,8 +7,7 @@ import com.indra.cloud.common.response.ResponseEnum;
 import com.indra.cloud.common.response.ServerResponseEntity;
 import com.indra.cloud.common.utils.BooleanUtil;
 import com.indra.cloud.rbac.service.MenuPermissionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,9 +21,9 @@ import java.util.Objects;
  * @date 2020/7/15
  */
 @RestController
+@Slf4j
 public class PermissionFeignController implements PermissionFeignClient {
 
-	private static final Logger logger = LoggerFactory.getLogger(PermissionFeignController.class);
 
 	@Autowired
 	private MenuPermissionService menuPermissionService;
@@ -34,6 +33,7 @@ public class PermissionFeignController implements PermissionFeignClient {
 		// 目前该用户拥有的权限
 		List<String> userPermissions = menuPermissionService.listUserPermissions(userId,
 				sysType, BooleanUtil.isTrue(isAdmin));
+
 
 		// uri,方法对应的权限 map
 		List<UriPermissionBO> uriPermissions = menuPermissionService

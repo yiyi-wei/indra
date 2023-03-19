@@ -31,10 +31,10 @@ public class DefaultAuthConfigAdapter implements AuthConfigAdapter {
 	 */
 	private static final String EXTERNAL_URI = "/**/ua/**";
 
-	/**
-	 * swagger
-	 */
-	private static final String DOC_URI = "/v2/api-docs";
+	// /**
+	//  * swagger
+	//  */
+	// private static final String DOC_URI = "/v2/api-docs";
 
 	@Override
 	public List<String> pathPatterns() {
@@ -44,7 +44,7 @@ public class DefaultAuthConfigAdapter implements AuthConfigAdapter {
 	@Override
 	public List<String> excludePathPatterns(String... paths) {
 		List<String> arrayList = new ArrayList<>();
-		arrayList.add(DOC_URI);
+		// arrayList.add(DOC_URI);
 		arrayList.add(FEIGN_INSIDER_URI);
 		arrayList.add(EXTERNAL_URI);
 		arrayList.addAll(Arrays.asList(paths));

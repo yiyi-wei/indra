@@ -22,4 +22,6 @@ spring:
 #mybatis mapper-locations 一定要配置，否则找不到映射类！！！！！
 mybatis:
   mapper-locations: classpath:com/indra/cloud/auth/mapper/xml/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 #  type-aliases-package: com.indra.cloud.auth.model

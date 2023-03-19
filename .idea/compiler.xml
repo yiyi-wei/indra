@@ -16,6 +16,7 @@
         <module name="indra-api-multishop" />
         <module name="indra-common-order" />
         <module name="indra-common-rabbitmq" />
+        <module name="indra-user" />
         <module name="indra-api-leaf" />
         <module name="indra-common-core" />
         <module name="indra-api-product" />
@@ -25,6 +26,7 @@
         <module name="indra-common-database" />
         <module name="indra-order" />
         <module name="indra-api-order" />
+        <module name="indra-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="indra_auth@119.23.62.127" uuid="dde43043-a816-4c1a-ab69-400efb17a749">
+    <data-source source="LOCAL" name="本地" uuid="f066ad71-5d5d-48f3-9e74-53580e43ca01">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://119.23.62.127:3306/indra_auth</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/indra_rbac</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="0@119.23.62.127" uuid="8bfde71b-4ef3-4cf0-b835-8d60a052ed61">
+      <driver-ref>redis</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
+      <jdbc-url>jdbc:redis://119.23.62.127:6379/0</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

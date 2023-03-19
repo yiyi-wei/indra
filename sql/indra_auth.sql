@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : pikp-MySQL
-Source Server Version : 80024
-Source Host           : localhost:3306
-Source Database       : mall4cloud_auth
+Source Server         : 服务器119.23.62.127
+Source Server Version : 80026
+Source Host           : 119.23.62.127:3306
+Source Database       : indra_auth
 
 Target Server Type    : MYSQL
-Target Server Version : 80024
+Target Server Version : 80026
 File Encoding         : 65001
 
-Date: 2023-03-17 17:25:26
+Date: 2023-03-19 15:16:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;

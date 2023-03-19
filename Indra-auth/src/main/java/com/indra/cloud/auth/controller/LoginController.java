@@ -8,6 +8,7 @@ import com.indra.cloud.auth.dto.AuthenticationDTO;
 import com.indra.cloud.auth.manager.TokenStore;
 import com.indra.cloud.auth.mapper.AuthAccountMapper;
 import com.indra.cloud.auth.service.impl.AuthAccountServiceImpl;
+import com.indra.cloud.common.response.ResponseEnum;
 import com.indra.cloud.common.response.ServerResponseEntity;
 import com.indra.cloud.common.security.AuthUserContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,12 +57,11 @@ public class LoginController {
 		clearUserPermissionsCacheDTO.setSysType(data.getSysType());
 		clearUserPermissionsCacheDTO.setUserId(data.getUserId());
 
-		// TODO 将以前的权限清理了,以免权限有缓存
-		// ServerResponseEntity<Void> clearResponseEntity = permissionFeignClient.clearUserPermissionsCache(clearUserPermissionsCacheDTO);
+		ServerResponseEntity<Void> clearResponseEntity = permissionFeignClient.clearUserPermissionsCache(clearUserPermissionsCacheDTO);
 
-		// if (!clearResponseEntity.isSuccess()) {
-		// 	return ServerResponseEntity.fail(ResponseEnum.UNAUTHORIZED);
-		// }
+		if (!clearResponseEntity.isSuccess()) {
+			return ServerResponseEntity.fail(ResponseEnum.UNAUTHORIZED);
+		}
 
 
 		// 保存token，返回token数据给前端，这里是最重要的

@@ -1,5 +1,6 @@
 package com.indra.cloud.rbac.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
  * @author FrozenWatermelon
  * @date 2020/6/24
  */
+@Mapper
 public interface UserRoleMapper {
 
     /**

@@ -33,7 +33,7 @@
     </select>
     <select id="getAuthAccountInVerifyByInputUserName"
             resultType="com.indra.cloud.common.security.bo.AuthAccountInVerifyBO">
-        select user_id, sys_type,uid,password,is_admin,tenant_id, status from auth_account
+        select user_id userId, sys_type sysType,uid,password,is_admin isAdmin,tenant_id tenantId, status from auth_account
         where sys_type = #{sysType} and status != -1
         <if test="inputUserNameType == 1">
             and username = #{inputUserName}

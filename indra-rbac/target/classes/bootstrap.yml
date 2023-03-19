@@ -1,0 +1,23 @@
+server:
+  port: 9102
+spring:
+  application:
+    name: indra-rbac
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.147.138:8848
+        file-extension: yml #配置文件格式
+        shared-configs:
+          - application-dev.yml
+      discovery:
+        server-addr: 192.168.147.138:8848
+  profiles:
+    active: dev # 环境标识 意思是：spring.application.name+spring.profiles.active+spring.cloud.nacos.config.file-extension
+    # indra-auth-dev.yml 开发环境数据库配置信息
+    # indra-auth-test.yml 测试环境数据库配置信息
+    # indra-auth-prod.yml 生产环境数据库配置信息
+
+mybatis:
+  mapper-locations: classpath:com/indra/cloud/rbac/mapper/xml/*.xml
+

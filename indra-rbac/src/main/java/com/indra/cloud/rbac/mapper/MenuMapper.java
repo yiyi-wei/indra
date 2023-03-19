@@ -3,6 +3,7 @@ package com.indra.cloud.rbac.mapper;
 import com.indra.cloud.rbac.model.Menu;
 import com.indra.cloud.rbac.vo.MenuSimpleVO;
 import com.indra.cloud.rbac.vo.MenuVO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * @author FrozenWatermelon
  */
+@Mapper
 public interface MenuMapper {
 
 	/**
