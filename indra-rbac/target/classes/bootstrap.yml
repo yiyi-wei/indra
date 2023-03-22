@@ -20,4 +20,5 @@ spring:
 
 mybatis:
   mapper-locations: classpath:com/indra/cloud/rbac/mapper/xml/*.xml
-
+  configuration:
+    map-underscore-to-camel-case: true

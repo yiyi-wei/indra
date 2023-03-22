@@ -6,7 +6,7 @@
         <option name="generateConfig">
           <GenerateConfig>
             <option name="annotationType" value="NONE" />
-            <option name="basePackage" value="com.indra.cloud.auth" />
+            <option name="basePackage" value="com.indra.cloud.user" />
             <option name="basePath" value="src/main/java" />
             <option name="classNameStrategy" value="camel" />
             <option name="encoding" value="UTF-8" />
@@ -15,7 +15,7 @@
             <option name="ignoreFieldSuffix" value="" />
             <option name="ignoreTablePrefix" value="" />
             <option name="ignoreTableSuffix" value="" />
-            <option name="moduleName" value="Indra-auth" />
+            <option name="moduleName" value="indra-user" />
             <option name="modulePath" value="$PROJECT_DIR$" />
             <option name="moduleUIInfoList">
               <list>
@@ -48,8 +48,20 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="AuthAccount" />
-                  <option name="tableName" value="auth_account" />
+                  <option name="className" value="UserAddr" />
+                  <option name="tableName" value="user_addr" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="User" />
+                  <option name="tableName" value="user" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Area" />
+                  <option name="tableName" value="area" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Fans" />
+                  <option name="tableName" value="fans" />
                 </TableUIInfo>
               </list>
             </option>
@@ -57,7 +69,7 @@
             <option name="useLombokPlugin" value="true" />
           </GenerateConfig>
         </option>
-        <option name="moduleName" value="Indra-auth" />
+        <option name="moduleName" value="indra-user" />
         <option name="projectPath" value="$PROJECT_DIR$" />
         <option name="templateName" value="default-all" />
       </TemplateContext>

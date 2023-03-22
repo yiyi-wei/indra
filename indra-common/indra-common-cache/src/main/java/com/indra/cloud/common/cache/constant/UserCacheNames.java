@@ -9,7 +9,7 @@ public interface UserCacheNames {
     /**
      * 前缀
      */
-    String USER_PREFIX = "mall4cloud_user:";
+    String USER_PREFIX = "indra_user:";
 
     /**
      * 用户信息缓存key
@@ -30,5 +30,10 @@ public interface UserCacheNames {
      * 店铺分类列表缓存key
      */
     String AREA_KEY = USER_PREFIX + "area";
+
+    /**
+     * 粉丝列表缓存key
+     */
+    String FANS_LIST_KEY = USER_PREFIX + "fans:";
 
 }

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 /**
  * 保存在token信息里面的用户信息
  *
- * com.mall4j.cloud.auth.service.impl.AuthAccountServiceImpl
- * com.mall4j.cloud.auth.controller.LoginController
+ * com.indra.cloud.auth.service.impl.AuthAccountServiceImpl
+ * com.indra.cloud.auth.controller.LoginController
  * @author FrozenWatermelon
  * @date 2020/7/3
  */

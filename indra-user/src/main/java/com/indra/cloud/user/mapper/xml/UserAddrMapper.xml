@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.indra.cloud.user.mapper.UserAddrMapper">
+
+    <resultMap id="BaseResultMap" type="com.indra.cloud.user.model.UserAddr">
+            <id property="addrId" column="addr_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+            <result property="isDefault" column="is_default" jdbcType="TINYINT"/>
+            <result property="consignee" column="consignee" jdbcType="VARCHAR"/>
+            <result property="provinceId" column="province_id" jdbcType="BIGINT"/>
+            <result property="province" column="province" jdbcType="VARCHAR"/>
+            <result property="cityId" column="city_id" jdbcType="BIGINT"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+            <result property="areaId" column="area_id" jdbcType="BIGINT"/>
+            <result property="area" column="area" jdbcType="VARCHAR"/>
+            <result property="postCode" column="post_code" jdbcType="VARCHAR"/>
+            <result property="addr" column="addr" jdbcType="VARCHAR"/>
+            <result property="lng" column="lng" jdbcType="DECIMAL"/>
+            <result property="lat" column="lat" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        addr_id,create_time,update_time,
+        user_id,mobile,is_default,
+        consignee,province_id,province,
+        city_id,city,area_id,
+        area,post_code,addr,
+        lng,lat
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user_addr
+        where  addr_id = #{addrId,jdbcType=BIGINT} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from user_addr
+        where  addr_id = #{addrId,jdbcType=BIGINT} 
+    </delete>
+    <insert id="insert" keyColumn="addr_id" keyProperty="addrId" parameterType="com.indra.cloud.user.model.UserAddr" useGeneratedKeys="true">
+        insert into user_addr
+        ( addr_id,create_time,update_time
+        ,user_id,mobile,is_default
+        ,consignee,province_id,province
+        ,city_id,city,area_id
+        ,area,post_code,addr
+        ,lng,lat)
+        values (#{addrId,jdbcType=BIGINT},#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP}
+        ,#{userId,jdbcType=BIGINT},#{mobile,jdbcType=VARCHAR},#{isDefault,jdbcType=TINYINT}
+        ,#{consignee,jdbcType=VARCHAR},#{provinceId,jdbcType=BIGINT},#{province,jdbcType=VARCHAR}
+        ,#{cityId,jdbcType=BIGINT},#{city,jdbcType=VARCHAR},#{areaId,jdbcType=BIGINT}
+        ,#{area,jdbcType=VARCHAR},#{postCode,jdbcType=VARCHAR},#{addr,jdbcType=VARCHAR}
+        ,#{lng,jdbcType=DECIMAL},#{lat,jdbcType=DECIMAL})
+    </insert>
+    <insert id="insertSelective" keyColumn="addr_id" keyProperty="addrId" parameterType="com.indra.cloud.user.model.UserAddr" useGeneratedKeys="true">
+        insert into user_addr
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="addrId != null">addr_id,</if>
+                <if test="createTime != null">create_time,</if>
+                <if test="updateTime != null">update_time,</if>
+                <if test="userId != null">user_id,</if>
+                <if test="mobile != null">mobile,</if>
+                <if test="isDefault != null">is_default,</if>
+                <if test="consignee != null">consignee,</if>
+                <if test="provinceId != null">province_id,</if>
+                <if test="province != null">province,</if>
+                <if test="cityId != null">city_id,</if>
+                <if test="city != null">city,</if>
+                <if test="areaId != null">area_id,</if>
+                <if test="area != null">area,</if>
+                <if test="postCode != null">post_code,</if>
+                <if test="addr != null">addr,</if>
+                <if test="lng != null">lng,</if>
+                <if test="lat != null">lat,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="addrId != null">#{addrId,jdbcType=BIGINT},</if>
+                <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+                <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
+                <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+                <if test="mobile != null">#{mobile,jdbcType=VARCHAR},</if>
+                <if test="isDefault != null">#{isDefault,jdbcType=TINYINT},</if>
+                <if test="consignee != null">#{consignee,jdbcType=VARCHAR},</if>
+                <if test="provinceId != null">#{provinceId,jdbcType=BIGINT},</if>
+                <if test="province != null">#{province,jdbcType=VARCHAR},</if>
+                <if test="cityId != null">#{cityId,jdbcType=BIGINT},</if>
+                <if test="city != null">#{city,jdbcType=VARCHAR},</if>
+                <if test="areaId != null">#{areaId,jdbcType=BIGINT},</if>
+                <if test="area != null">#{area,jdbcType=VARCHAR},</if>
+                <if test="postCode != null">#{postCode,jdbcType=VARCHAR},</if>
+                <if test="addr != null">#{addr,jdbcType=VARCHAR},</if>
+                <if test="lng != null">#{lng,jdbcType=DECIMAL},</if>
+                <if test="lat != null">#{lat,jdbcType=DECIMAL},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.indra.cloud.user.model.UserAddr">
+        update user_addr
+        <set>
+                <if test="createTime != null">
+                    create_time = #{createTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="updateTime != null">
+                    update_time = #{updateTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="userId != null">
+                    user_id = #{userId,jdbcType=BIGINT},
+                </if>
+                <if test="mobile != null">
+                    mobile = #{mobile,jdbcType=VARCHAR},
+                </if>
+                <if test="isDefault != null">
+                    is_default = #{isDefault,jdbcType=TINYINT},
+                </if>
+                <if test="consignee != null">
+                    consignee = #{consignee,jdbcType=VARCHAR},
+                </if>
+                <if test="provinceId != null">
+                    province_id = #{provinceId,jdbcType=BIGINT},
+                </if>
+                <if test="province != null">
+                    province = #{province,jdbcType=VARCHAR},
+                </if>
+                <if test="cityId != null">
+                    city_id = #{cityId,jdbcType=BIGINT},
+                </if>
+                <if test="city != null">
+                    city = #{city,jdbcType=VARCHAR},
+                </if>
+                <if test="areaId != null">
+                    area_id = #{areaId,jdbcType=BIGINT},
+                </if>
+                <if test="area != null">
+                    area = #{area,jdbcType=VARCHAR},
+                </if>
+                <if test="postCode != null">
+                    post_code = #{postCode,jdbcType=VARCHAR},
+                </if>
+                <if test="addr != null">
+                    addr = #{addr,jdbcType=VARCHAR},
+                </if>
+                <if test="lng != null">
+                    lng = #{lng,jdbcType=DECIMAL},
+                </if>
+                <if test="lat != null">
+                    lat = #{lat,jdbcType=DECIMAL},
+                </if>
+        </set>
+        where   addr_id = #{addrId,jdbcType=BIGINT} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.indra.cloud.user.model.UserAddr">
+        update user_addr
+        set 
+            create_time =  #{createTime,jdbcType=TIMESTAMP},
+            update_time =  #{updateTime,jdbcType=TIMESTAMP},
+            user_id =  #{userId,jdbcType=BIGINT},
+            mobile =  #{mobile,jdbcType=VARCHAR},
+            is_default =  #{isDefault,jdbcType=TINYINT},
+            consignee =  #{consignee,jdbcType=VARCHAR},
+            province_id =  #{provinceId,jdbcType=BIGINT},
+            province =  #{province,jdbcType=VARCHAR},
+            city_id =  #{cityId,jdbcType=BIGINT},
+            city =  #{city,jdbcType=VARCHAR},
+            area_id =  #{areaId,jdbcType=BIGINT},
+            area =  #{area,jdbcType=VARCHAR},
+            post_code =  #{postCode,jdbcType=VARCHAR},
+            addr =  #{addr,jdbcType=VARCHAR},
+            lng =  #{lng,jdbcType=DECIMAL},
+            lat =  #{lat,jdbcType=DECIMAL}
+        where   addr_id = #{addrId,jdbcType=BIGINT} 
+    </update>
+</mapper>

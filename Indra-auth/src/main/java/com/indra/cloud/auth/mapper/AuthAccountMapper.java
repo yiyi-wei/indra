@@ -1,5 +1,6 @@
 package com.indra.cloud.auth.mapper;
 
+import com.indra.cloud.api.auth.vo.AuthAccountVO;
 import com.indra.cloud.auth.model.AuthAccount;
 import com.indra.cloud.common.security.bo.AuthAccountInVerifyBO;
 import org.apache.ibatis.annotations.Mapper;
@@ -14,18 +15,14 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface AuthAccountMapper {
 
-    int deleteByPrimaryKey(Long id);
-
-    int insert(AuthAccount record);
-
-    int insertSelective(AuthAccount record);
-
-    AuthAccount selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(AuthAccount record);
-
-    int updateByPrimaryKey(AuthAccount record);
-
+    /**
+     * 根据输入的用户名及用户名类型获取用户信息
+     *
+     * @param inputUserNameType 输入的用户名类型 1.username 2.mobile 3.email
+     * @param inputUserName     输入的用户名
+     * @param sysType           系统类型
+     * @return 用户在token中信息 + 数据库中的密码
+     */
     AuthAccountInVerifyBO getAuthAccountInVerifyByInputUserName(@Param("inputUserNameType") Integer inputUserNameType, @Param("inputUserName") String inputUserName, @Param("sysType") Integer sysType);
 
     /**
@@ -55,10 +52,63 @@ public interface AuthAccountMapper {
     void updatePassword(@Param("userId") Long userId, @Param("sysType") Integer sysType, @Param("newPassWord") String newPassWord);
 
     /**
+     * 保存
+     *
+     * @param authAccount
+     */
+    void save(@Param("authAccount") AuthAccount authAccount);
+
+    /**
+     * 更新
+     *
+     * @param authAccount authAccount
+     */
+    void updateAccountInfo(@Param("authAccount") AuthAccount authAccount);
+
+    /**
+     * 根据用户id和系统类型删除用户
+     *
+     * @param userId  用户id
+     * @param sysType 系统类型
+     */
+    void deleteByUserIdAndSysType(@Param("userId") Long userId, @Param("sysType") Integer sysType);
+
+    /**
      * 根据用户名和系统类型获取用户信息
      * @param validAccount
      * @param systemType
      * @return uid
      */
     AuthAccount getAccountByInputUserName(@Param("validAccount") String validAccount, @Param("systemType") Integer systemType);
+
+    /**
+     * 根据用户名和系统类型获取用户信息
+     * @param username
+     * @param sysType
+     * @return
+     */
+    AuthAccountVO getByUsernameAndSysType(@Param("userName") String username, @Param("sysType") Integer sysType);
+
+    /**
+     * 根据用户id更新租户id
+     * @param authAccount
+     * @param userId
+     * @param sysType
+     * @return
+     */
+    int updateUserInfoByUserId(@Param("authAccount") AuthAccount authAccount, @Param("userId") Long userId, @Param("sysType") Integer sysType);
+
+    /**
+     * 根据租户id获取商家信息
+     * @param tenantId
+     * @return
+     */
+    AuthAccountVO getMerchantInfoByTenantId(@Param("tenantId") Long tenantId);
+
+    /**
+     * 通过uid删除用户
+     * @param uid 用户唯一凭证
+     * @return 数据库影响的行数
+     */
+    Integer deleteAccountByUid(@Param("uid") Long uid);
 }

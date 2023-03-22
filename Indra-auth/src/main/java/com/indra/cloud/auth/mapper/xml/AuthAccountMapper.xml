@@ -5,138 +5,37 @@
 <mapper namespace="com.indra.cloud.auth.mapper.AuthAccountMapper">
 
     <resultMap id="BaseResultMap" type="com.indra.cloud.auth.model.AuthAccount">
-            <id property="uid" column="uid" jdbcType="BIGINT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="createIp" column="create_ip" jdbcType="VARCHAR"/>
-            <result property="status" column="status" jdbcType="TINYINT"/>
-            <result property="sysType" column="sys_type" jdbcType="TINYINT"/>
-            <result property="userId" column="user_id" jdbcType="BIGINT"/>
-            <result property="tenantId" column="tenant_id" jdbcType="BIGINT"/>
-            <result property="isAdmin" column="is_admin" jdbcType="TINYINT"/>
+        <!--@mbg.generated-->
+        <!--@Table auth_account-->
+        <id column="uid" property="uid" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="create_ip" property="createIp" />
+        <result column="status" property="status" />
+        <result column="sys_type" property="sysType" />
+        <result column="user_id" property="userId"/>
+        <result column="tenant_id" property="tenantId"/>
+        <result column="is_admin" property="isAdmin"/>
     </resultMap>
-
     <sql id="Base_Column_List">
-        uid,create_time,update_time,
-        username,password,create_ip,
-        status,sys_type,user_id,
-        tenant_id,is_admin
+        <!--@mbg.generated-->
+        `uid`, create_time, update_time, username, `password`, create_ip,
+        `status`, sys_type, user_id, tenant_id, is_admin
     </sql>
+    <delete id="deleteAccountByUid">
+        delete from auth_account where uid = #{uid}
+    </delete>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List" />
-        from auth_account
-        where  uid = #{uid,jdbcType=BIGINT} 
-    </select>
-    <select id="getAuthAccountInVerifyByInputUserName"
-            resultType="com.indra.cloud.common.security.bo.AuthAccountInVerifyBO">
-        select user_id userId, sys_type sysType,uid,password,is_admin isAdmin,tenant_id tenantId, status from auth_account
+    <select id="getAuthAccountInVerifyByInputUserName" resultType="com.indra.cloud.common.security.bo.AuthAccountInVerifyBO">
+        select user_id, sys_type,uid,password,is_admin,tenant_id, status from auth_account
         where sys_type = #{sysType} and status != -1
         <if test="inputUserNameType == 1">
             and username = #{inputUserName}
         </if>
 
     </select>
-
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        delete from auth_account
-        where  uid = #{uid,jdbcType=BIGINT} 
-    </delete>
-    <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.indra.cloud.auth.model.AuthAccount" useGeneratedKeys="true">
-        insert into auth_account
-        ( uid,create_time,update_time
-        ,username,password,create_ip
-        ,status,sys_type,user_id
-        ,tenant_id,is_admin)
-        values (#{uid,jdbcType=BIGINT},#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP}
-        ,#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{createIp,jdbcType=VARCHAR}
-        ,#{status,jdbcType=TINYINT},#{sysType,jdbcType=TINYINT},#{userId,jdbcType=BIGINT}
-        ,#{tenantId,jdbcType=BIGINT},#{isAdmin,jdbcType=TINYINT})
-    </insert>
-    <insert id="insertSelective" keyColumn="uid" keyProperty="uid" parameterType="com.indra.cloud.auth.model.AuthAccount" useGeneratedKeys="true">
-        insert into auth_account
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-                <if test="uid != null">uid,</if>
-                <if test="createTime != null">create_time,</if>
-                <if test="updateTime != null">update_time,</if>
-                <if test="username != null">username,</if>
-                <if test="password != null">password,</if>
-                <if test="createIp != null">create_ip,</if>
-                <if test="status != null">status,</if>
-                <if test="sysType != null">sys_type,</if>
-                <if test="userId != null">user_id,</if>
-                <if test="tenantId != null">tenant_id,</if>
-                <if test="isAdmin != null">is_admin,</if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-                <if test="uid != null">#{uid,jdbcType=BIGINT},</if>
-                <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
-                <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
-                <if test="username != null">#{username,jdbcType=VARCHAR},</if>
-                <if test="password != null">#{password,jdbcType=VARCHAR},</if>
-                <if test="createIp != null">#{createIp,jdbcType=VARCHAR},</if>
-                <if test="status != null">#{status,jdbcType=TINYINT},</if>
-                <if test="sysType != null">#{sysType,jdbcType=TINYINT},</if>
-                <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
-                <if test="tenantId != null">#{tenantId,jdbcType=BIGINT},</if>
-                <if test="isAdmin != null">#{isAdmin,jdbcType=TINYINT},</if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.indra.cloud.auth.model.AuthAccount">
-        update auth_account
-        <set>
-                <if test="createTime != null">
-                    create_time = #{createTime,jdbcType=TIMESTAMP},
-                </if>
-                <if test="updateTime != null">
-                    update_time = #{updateTime,jdbcType=TIMESTAMP},
-                </if>
-                <if test="username != null">
-                    username = #{username,jdbcType=VARCHAR},
-                </if>
-                <if test="password != null">
-                    password = #{password,jdbcType=VARCHAR},
-                </if>
-                <if test="createIp != null">
-                    create_ip = #{createIp,jdbcType=VARCHAR},
-                </if>
-                <if test="status != null">
-                    status = #{status,jdbcType=TINYINT},
-                </if>
-                <if test="sysType != null">
-                    sys_type = #{sysType,jdbcType=TINYINT},
-                </if>
-                <if test="userId != null">
-                    user_id = #{userId,jdbcType=BIGINT},
-                </if>
-                <if test="tenantId != null">
-                    tenant_id = #{tenantId,jdbcType=BIGINT},
-                </if>
-                <if test="isAdmin != null">
-                    is_admin = #{isAdmin,jdbcType=TINYINT},
-                </if>
-        </set>
-        where   uid = #{uid,jdbcType=BIGINT} 
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.indra.cloud.auth.model.AuthAccount">
-        update auth_account
-        set 
-            create_time =  #{createTime,jdbcType=TIMESTAMP},
-            update_time =  #{updateTime,jdbcType=TIMESTAMP},
-            username =  #{username,jdbcType=VARCHAR},
-            password =  #{password,jdbcType=VARCHAR},
-            create_ip =  #{createIp,jdbcType=VARCHAR},
-            status =  #{status,jdbcType=TINYINT},
-            sys_type =  #{sysType,jdbcType=TINYINT},
-            user_id =  #{userId,jdbcType=BIGINT},
-            tenant_id =  #{tenantId,jdbcType=BIGINT},
-            is_admin =  #{isAdmin,jdbcType=TINYINT}
-        where   uid = #{uid,jdbcType=BIGINT} 
-    </update>
-
     <select id="getByUserIdAndType" resultMap="BaseResultMap">
         select uid, username, `password`, create_ip,
                `status`, sys_type, user_id, tenant_id, is_admin from auth_account where sys_type = #{sysType} and user_id = #{userId}
@@ -149,8 +48,52 @@
     <update id="updatePassword">
         update auth_account set password = #{newPassWord} where sys_type = #{sysType} and user_id = #{userId}
     </update>
+    <insert id="save">
+        insert into auth_account (`uid`,`username`,`password`,`create_ip`,`status`,`sys_type`,`user_id`,`tenant_id`,`is_admin`)
+        values (#{authAccount.uid},#{authAccount.username},#{authAccount.password},#{authAccount.createIp},#{authAccount.status},#{authAccount.sysType},#{authAccount.userId},#{authAccount.tenantId},#{authAccount.isAdmin});
+    </insert>
+    <update id="updateAccountInfo">
+        update auth_account
+        <set>
+            <if test="authAccount.username != null">
+                username = #{authAccount.username},
+            </if>
+            <if test="authAccount.password != null">
+                password = #{authAccount.password},
+            </if>
+            <if test="authAccount.status != null">
+                status = #{authAccount.status},
+            </if>
+        </set>
+        where user_id = #{authAccount.userId} and sys_type = #{authAccount.sysType}
+    </update>
+    <update id="deleteByUserIdAndSysType">
+        update auth_account set status = -1 where user_id = #{userId} and sys_type = #{sysType}
+    </update>
+    <update id="updateUserInfoByUserId">
+        update auth_account
+        <set>
+            <if test="authAccount.tenantId != null">
+                tenant_id = #{authAccount.tenantId},
+            </if>
+        </set>
+        where user_id = #{userId} and sys_type = #{sysType} and status != -1 limit 1
+    </update>
 
-    <select id="getAccountByInputUserName" resultType="com.indra.cloud.api.auth.vo.AuthAccountVO">
+    <select id="getAccountByInputUserName" resultType="com.indra.cloud.auth.model.AuthAccount">
         select uid,sys_type,user_id from auth_account where username = #{validAccount} and sys_type = #{systemType}
+    </select>
+    <select id="getByUsernameAndSysType" resultType="com.indra.cloud.api.auth.vo.AuthAccountVO">
+        select uid, username from auth_account where status != 1
+        <if test="sysType != null">
+            and sys_type = #{sysType}
+        </if>
+        <if test="userName != null and userName != ''">
+            and username = #{userName}
+        </if>
+    </select>
+    <select id="getMerchantInfoByTenantId" resultType="com.indra.cloud.api.auth.vo.AuthAccountVO">
+        select user_id, sys_type, uid, username, password, is_admin, tenant_id, status from auth_account
+        where sys_type = 1 and is_admin = 1 and tenant_id = #{tenantId} limit 1
     </select>
 </mapper>

@@ -106,6 +106,11 @@ public class AuthAccountServiceImpl implements AuthAccountService {
         return authAccountMapper.getAccountByInputUserName(username, systemType);
     }
 
+    @Override
+    public Integer deleteAccountByUid(Long uid) {
+        return authAccountMapper.deleteAccountByUid(uid);
+    }
+
 
     /**
      * 防止计时攻击

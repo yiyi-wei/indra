@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Indra-auth.iml" filepath="$PROJECT_DIR$/Indra-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/indra-gateway.iml" filepath="$PROJECT_DIR$/indra-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/indra-rbac.iml" filepath="$PROJECT_DIR$/indra-rbac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/indra-user.iml" filepath="$PROJECT_DIR$/indra-user.iml" />
     </modules>
   </component>
 </project>

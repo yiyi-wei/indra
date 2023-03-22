@@ -58,6 +58,10 @@ public enum ResponseEnum {
 	DATA_INCOMPLETE("A00010", "数据不完整"),
 
 	/**
+	 * 恶意攻击
+	 */
+	MALICIOUS_ATTACKS("A00011", "恶意攻击"),
+	/**
 	 * 01开头代表商品
 	 */
 	SPU_NOT_EXIST("A01000", "spu not exist"),

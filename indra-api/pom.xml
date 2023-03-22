@@ -17,6 +17,7 @@
         <module>indra-api-product</module>
         <module>indra-api-rbac</module>
         <module>indra-api-user</module>
+        <module>indra-api-feed</module>
     </modules>
     <artifactId>indra-api</artifactId>
     <packaging>pom</packaging>

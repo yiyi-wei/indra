@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.indra.cloud.user.mapper.FansMapper">
+
+    <resultMap id="BaseResultMap" type="com.indra.cloud.user.model.Fans">
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <id property="fansId" column="fans_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="FollowerResultMap" type="com.indra.cloud.user.vo.UserVO">
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <!--封装孩子-->
+        <collection property="fansList" javaType="list" ofType="com.indra.cloud.user.vo.UserVO">
+            <id property="userId" column="fans_id" jdbcType="BIGINT"/>
+            <result property="nickName" column="fans_nick_name" jdbcType="VARCHAR"/>
+            <result property="pic" column="fans_pic" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+
+
+
+    <sql id="Base_Column_List">
+        user_id,fans_id,create_time,
+        update_time,status
+    </sql>
+    <insert id="save">
+        insert into fans
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fansId != null">fans_id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fansId != null">#{fansId,jdbcType=BIGINT},</if>
+            <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+            <if test="status != null">#{status,jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
+
+    <select id="selectFansByUserId" resultMap="FollowerResultMap">
+        SELECT
+            o.user_id,
+            o.fans_id,
+            u1.nick_name fans_nick_name,
+            u1.pic fans_pic
+        FROM
+            (
+                SELECT
+                    u.user_id,
+                    fans_id
+                FROM
+                    fans f
+                        LEFT JOIN `user` u ON f.user_id = u.user_id
+                WHERE
+                    u.user_id = #{userId}
+                  AND u.`status` = 1
+                  AND f.`status` = 1
+            ) o
+                LEFT JOIN `user` u1 ON u1.user_id = o.fans_id;
+    </select>
+</mapper>

@@ -18,6 +18,8 @@
         <module>indra-rbac</module>
         <module>indra-gateway</module>
         <module>indra-user</module>
+        <module>indra-feed</module>
+        <module>indra-api/indra-api-feed</module>
     </modules>
 
     <properties>

@@ -5,41 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62ccf3b8-da7c-45c2-840e-96d3f739627f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/indra-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-gateway/src/main/java/com/indra/cloud/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/controller/MenuPermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/dto/MenuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/dto/MenuPermissionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/dto/MenuWithPermissionIdDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/dto/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-user/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/annotations/RequiredToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/indra-user/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/listener/RabbitListenerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-api/indra-api-feed/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-api/indra-api-user/src/main/java/com/indra/cloud/api/user/vo/AreaVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-api/indra-api-user/src/main/java/com/indra/cloud/api/user/vo/UserApiVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/main/java/com/indra/cloud/rabbitmq/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/main/java/com/indra/cloud/rabbitmq/constant/ExchangeMQName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/main/java/com/indra/cloud/rabbitmq/constant/QueueMQName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/main/java/com/indra/cloud/rabbitmq/constant/RoutingKeyMQName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-feed/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-feed/src/main/java/com/indra/cloud/feed/FeedApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-feed/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/controller/UserRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/controller/UserRelationshipController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/dto/UserRegisterDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/AreaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/UserAddrService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/UserRelationshipService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/impl/AreaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/impl/UserAddrServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/impl/UserRelationshipServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/vo/UserSimpleInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/IndraAuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/AuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/feign/AccountFeignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/feign/AccountFeignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/mapper/AuthAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/mapper/AuthAccountMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/mapper/xml/AuthAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/mapper/xml/AuthAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/service/AuthAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/service/AuthAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/service/impl/AuthAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/service/impl/AuthAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indra-auth/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/target/classes/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Indra-auth/target/classes/com/indra/cloud/auth/mapper/xml/AuthAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Indra-auth/target/classes/com/indra/cloud/auth/mapper/xml/AuthAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-api/indra-api-rbac/src/main/java/com/indra/cloud/api/rbac/feign/PermissionFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-api/indra-api-rbac/src/main/java/com/indra/cloud/api/rbac/feign/PermissionFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-cache/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-cache/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/OauthCacheNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/OauthCacheNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/RbacCacheNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/RbacCacheNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-security/src/main/java/com/indra/cloud/common/security/adapter/DefaultAuthConfigAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-security/src/main/java/com/indra/cloud/common/security/adapter/DefaultAuthConfigAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/feign/PermissionFeignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/feign/PermissionFeignController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/MenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/MenuPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/MenuPermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/RoleMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/RoleMenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/xml/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/mapper/xml/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indra-rbac/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-rbac/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-api/indra-api-auth/src/main/java/com/indra/cloud/api/auth/bo/UserInfoInTokenBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-api/indra-api-auth/src/main/java/com/indra/cloud/api/auth/bo/UserInfoInTokenBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-api/indra-api-user/src/main/java/com/indra/cloud/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-api/indra-api-user/src/test/java/com/indra/cloud/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/UserCacheNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/constant/UserCacheNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/util/CacheManagerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-cache/src/main/java/com/indra/cloud/common/cache/util/CacheManagerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-core/src/main/java/com/indra/cloud/common/response/ResponseEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-core/src/main/java/com/indra/cloud/common/response/ResponseEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/main/java/com/indra/cloud/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-common/indra-common-rabbitmq/src/test/java/com/indra/cloud/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-gateway/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-gateway/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/indra-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indra-user/src/main/java/com/indra/cloud/user/annotations/RequiredToken.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/indra_auth.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/indra_auth.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,9 +108,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
+    "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_directory_selection": "D:/indra/indra-api/indra-api-auth/src/main/java/com/indra/cloud/api/auth",
-    "last_opened_file_path": "D:/indra/indra-user/src/main/resources",
+    "last_opened_file_path": "D:/indra/indra-user/src/main/java/com/indra/cloud/user",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,7 +122,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "3a56aa9070bfc4b61a0d6bacc58f0e37",
+    "spring.configuration.checksum": "c8dd43a1d59db1194e5c3a75c92e167b",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -122,19 +136,22 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.indra.cloud.user.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\indra\indra-user\src\main\java\com\indra\cloud\user" />
+      <recent name="D:\indra\indra-api\indra-api-user\src\main\java\com\indra\cloud\api\user" />
+      <recent name="D:\indra\indra-feed\src\main\resources" />
       <recent name="D:\indra\indra-user\src\main\resources" />
       <recent name="D:\indra\indra-gateway\src\main\resources" />
-      <recent name="D:\indra\indra-rbac\src\main\java\com\indra\cloud\rbac" />
-      <recent name="D:\indra\Indra-auth\src\main\java\com\indra\cloud\auth\model" />
-      <recent name="D:\indra\Indra-auth\src\main\java\com\indra\cloud\auth\mapper\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\indra\indra-user\src\main\java\com\indra\cloud\user\mapper" />
+      <recent name="D:\indra\indra-user\src\main\java\com\indra\cloud\user" />
       <recent name="D:\indra\Indra-auth\src\main\java\com\indra\cloud\auth\mapper\xml" />
       <recent name="D:\indra\src\main\resources\mapper\old" />
       <recent name="D:\indra\Indra-auth\src\main\java\com\indra\cloud\auth\mapper" />
-      <recent name="D:\indra\Indra-auth\src\main\java\com\indra\cloud\auth\vvv" />
-      <recent name="D:\indra\src\main\java\generator\mapper\old" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.indra.cloud.gateway" />
@@ -152,12 +169,25 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayApplication">
-    <configuration name="IndraAuthApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.indra.cloud.auth.IndraAuthApplication" />
+    <configuration name="AuthApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.indra.cloud.auth.AuthApplication" />
       <module name="Indra-auth" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.indra.cloud.auth.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Indra-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.indra.cloud.auth.AuthApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.indra.cloud.auth.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,19 +201,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.indra.cloud.gateway.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IndraAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Indra-auth" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.indra.cloud.auth.IndraAuthApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.indra.cloud.auth.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,10 +228,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="indra-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.indra.cloud.user.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.RbacApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.IndraAuthApplication" />
         <item itemvalue="Application.IndraAuthApplication" />
       </list>
@@ -244,7 +268,9 @@
       <workItem from="1679038951921" duration="4098000" />
       <workItem from="1679043822921" duration="2443000" />
       <workItem from="1679047379193" duration="7640000" />
-      <workItem from="1679209263274" duration="21979000" />
+      <workItem from="1679209263274" duration="25626000" />
+      <workItem from="1679279505936" duration="9108000" />
+      <workItem from="1679303511919" duration="40376000" />
     </task>
     <servers />
   </component>
@@ -255,26 +281,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/controller/LoginController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/manager/TokenStore.java</url>
-          <line>289</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/manager/TokenStore.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/manager/TokenStore.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/controller/MenuController.java</url>
           <line>51</line>
           <option name="timeStamp" value="15" />
@@ -283,6 +289,11 @@
           <url>file://$PROJECT_DIR$/indra-rbac/src/main/java/com/indra/cloud/rbac/controller/RoleController.java</url>
           <line>57</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Indra-auth/src/main/java/com/indra/cloud/auth/listener/RabbitListenerHandler.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

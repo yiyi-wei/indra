@@ -52,4 +52,11 @@ public interface AuthAccountService {
      * @return uid
      */
     AuthAccount getAccountByInputUserName(String username, Integer systemType);
+
+    /**
+     * 根据uid删除用户，uid是唯一的不需要加系统类型
+     * @param uid 用户唯一凭证
+     * @return 影响的数据库行数
+     */
+    Integer deleteAccountByUid(Long uid);
 }

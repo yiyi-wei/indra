@@ -19,6 +19,13 @@ public class CacheManagerUtil {
 		this.cacheManager = cacheManager;
 	}
 
+	/**
+	 * 获取缓存
+	 * @param cacheName 缓存名
+	 * @param key key
+	 * @return 缓存value
+	 * @param <T> 泛型
+	 */
 	@SuppressWarnings({ "unchecked" })
 	public <T> T getCache(String cacheName, String key) {
 		Cache cache = cacheManager.getCache(cacheName);
@@ -32,6 +39,13 @@ public class CacheManagerUtil {
 		return (T) valueWrapper.get();
 	}
 
+	/**
+	 * 更改缓存value
+	 * @param cacheName 缓存名
+	 * @param key key
+	 * @param value value
+	 */
+
 	public void putCache(String cacheName, String key, Object value) {
 		Cache cache = cacheManager.getCache(cacheName);
 		if (cache != null) {
@@ -39,6 +53,11 @@ public class CacheManagerUtil {
 		}
 	}
 
+	/**
+	 * 删除缓存
+	 * @param cacheName 缓存名
+	 * @param key key
+	 */
 	public void evictCache(String cacheName, String key) {
 		Cache cache = cacheManager.getCache(cacheName);
 		if (cache != null) {
